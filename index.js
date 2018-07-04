@@ -1,3 +1,14 @@
+var exec = require('child_process').exec;
+var child;
+
 let im = require("./lib/imagick");
 
-// TODO: Check if imagemagick is installed else throw error
+
+child = exec("magick -version", function (error, stdout, stderr) {
+    if (error !== null) {
+        console.log('imagemagick is not installed! Please install imagemagick from https://www.imagemagick.org/');
+        process.exit(1);
+    }
+});
+
+module.exports = im;
