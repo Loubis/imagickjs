@@ -1,3 +1,3 @@
 let im = require("./lib/imagick");
 
-im.composit("test").test("blah").end().write();
+im.composit("test").conn("blah").end().composit("test").write();
